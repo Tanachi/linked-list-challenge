@@ -231,3 +231,25 @@ function insertStack(){
   formList.add(x);
   document.getElementById("myForm").reset();
 }
+
+
+function displayStack(){
+  if(formList.getHead() === null){
+    console.log("Nothing Inside");
+    return;
+  }
+  var item = formList.getHead();
+  var line = '';
+  var count = -1;
+   while(item !== null){
+    count++;
+    item = item.next;
+   }
+   while (count > -1){
+    var gogo = formList.get(count);
+    line += gogo.value;
+    count--;
+   }
+   document.getElementById("stackData").value=line;
+
+}
